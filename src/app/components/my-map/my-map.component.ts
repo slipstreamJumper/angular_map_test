@@ -14,7 +14,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
   ngAfterViewInit() {
-    const myAPIKey = '449cbe9951e44776b4d615a923149aca';
+    const myAPIKey = "449cbe9951e44776b4d615a923149aca";
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
     const initialState = {
       lat: 38.88,
