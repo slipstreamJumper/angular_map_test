@@ -24,7 +24,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
 
     const initialState = {
-      lng: 38.889248,
+      lat: 38.889248,
       long: -77.050636,
       zoom: 3
     };
