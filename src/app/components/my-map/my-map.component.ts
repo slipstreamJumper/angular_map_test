@@ -17,8 +17,8 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     const myAPIKey = "449cbe9951e44776b4d615a923149aca";
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
     const initialState = {
-      lng: -77,
-      lat: 38,
+      lng: 11,
+      lat: 49,
       zoom: 4
     };
     const map = new L.Map(this.mapContainer.nativeElement).setView(
