@@ -10,30 +10,44 @@ export class MyMapComponent implements OnInit, AfterViewInit {
   private map: L.Map;
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;
+
   constructor() { }
   ngOnInit() {
   }
+
+
   ngAfterViewInit() {
     const myAPIKey = "449cbe9951e44776b4d615a923149aca";
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
+
     const initialState = {
       lng: -77,
       lat: 38,
       zoom: 8
     };
+
     const map = new L.Map(this.mapContainer.nativeElement).setView(
       [initialState.lat, initialState.lng],
       initialState.zoom
     );
+
+    var greenIcon = L.icon({
+      iconURL: 'assets/images/lego.png';
+      iconSize: [40,80],
+      iconAnchor: [38, -77]
+    });
 
     map.attributionControl
       .setPrefix("")
       .addAttribution(
         'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
       );
+
     L.mapboxGL({
       style: `${mapStyle}?apiKey=${myAPIKey}`,
       accessToken: "no-token"
     }).addTo(map);
+
+    L.marker([38, -77], {icon: greenIcon}).addTo(map);
   }
 }
