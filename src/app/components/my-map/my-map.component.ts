@@ -34,7 +34,9 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     var greenIcon = L.icon({
       iconUrl: 'assets/images/lego.png',
       iconSize: [8,12],
-      iconAnchor: [38.889248, -77.050636]
+      iconAnchor: [38.889248, -77.050636],
+      shadowAnchor: [38.889248, -77.050636],
+      popupAnchor: [38.889248, -77.050636],
     });
 
     map.attributionControl
