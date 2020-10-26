@@ -50,6 +50,6 @@ export class MyMapComponent implements OnInit, AfterViewInit {
       accessToken: "no-token"
     }).addTo(map);
 
-    L.marker([38.889248, -77.050636],, {icon: greenIcon}).addTo(map);
+    L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
   }
 }
