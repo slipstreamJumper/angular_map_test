@@ -32,7 +32,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     );
 
     var greenIcon = L.icon({
-      iconURL: 'assets/images/lego.png',
+      iconUrl: 'assets/images/lego.png',
       iconSize: [40,80],
       iconAnchor: [38, -77]
     });
