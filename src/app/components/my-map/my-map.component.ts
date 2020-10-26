@@ -33,10 +33,10 @@ export class MyMapComponent implements OnInit, AfterViewInit {
 
     var greenIcon = L.icon({
       iconUrl: 'assets/images/lego.png',
-      iconSize: [8,12],
-      iconAnchor: [38.889248, -77.050636],
-      shadowAnchor: [38.889248, -77.050636],
-      popupAnchor: [38.889248, -77.050636],
+      iconSize: [20,30],
+      iconAnchor: [10, 30],
+      shadowAnchor: [10, 30],
+      popupAnchor: [10, 30]
     });
 
     map.attributionControl
@@ -50,6 +50,6 @@ export class MyMapComponent implements OnInit, AfterViewInit {
       accessToken: "no-token"
     }).addTo(map);
 
-    L.marker([38, -77], {icon: greenIcon}).addTo(map);
+    L.marker([38.889248, -77.050636],, {icon: greenIcon}).addTo(map);
   }
 }
