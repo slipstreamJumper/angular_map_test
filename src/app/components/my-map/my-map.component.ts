@@ -19,7 +19,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     const initialState = {
       lng: -77,
       lat: 38,
-      zoom: 4
+      zoom: 8
     };
     const map = new L.Map(this.mapContainer.nativeElement).setView(
       [initialState.lat, initialState.lng],
