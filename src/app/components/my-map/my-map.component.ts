@@ -20,13 +20,13 @@ export class MyMapComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const myAPIKey = '449cbe9951e44776b4d615a923149aca';
-    const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
+    const myAPIKey = '23f38da328ed40c08d05ae637d27e626';
+    const mapStyle = "https://maps.geoapify.com/v1/styles/osm-carto/style.json";
 
     const initialState = {
-      lat: 38.889248,
-      long: -77.050636,
-      zoom: 3
+      lat: 38.88,
+      long: -77.05,
+      zoom: 4
     };
 
     const map = new L.Map(this.mapContainer.nativeElement).setView(
