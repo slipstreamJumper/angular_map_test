@@ -28,7 +28,8 @@ export class MyMapComponent implements OnInit, AfterViewInit {
 
     map.attributionControl
       .setPrefix("")
-      .addAttribution("Geoapify"
+      .addAttribution(
+        'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
       );
 
     L.mapboxGL({
