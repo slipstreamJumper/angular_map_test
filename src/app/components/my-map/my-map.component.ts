@@ -17,12 +17,12 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     const myAPIKey = "449cbe9951e44776b4d615a923149aca";
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
     const initialState = {
-      lat: 38.88,
-      long: -77.05,
+      lat: 38,
+      lng: -77,
       zoom: 4
     };
     const map = new L.Map(this.mapContainer.nativeElement).setView(
-      [initialState.lat, initialState.long],
+      [initialState.lat, initialState.lng],
       initialState.zoom
     );
 
@@ -31,7 +31,6 @@ export class MyMapComponent implements OnInit, AfterViewInit {
       .addAttribution(
         'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
       );
-
     L.mapboxGL({
       style: '${mapStyle}?apiKey=${myAPIKey}',
       accessToken: "no-token"
