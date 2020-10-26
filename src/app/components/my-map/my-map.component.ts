@@ -17,8 +17,8 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     const myAPIKey = "449cbe9951e44776b4d615a923149aca";
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
     const initialState = {
-      lng: 11,
-      lat: 49,
+      lng: -77,
+      lat: 38,
       zoom: 4
     };
     const map = new L.Map(this.mapContainer.nativeElement).setView(
@@ -32,7 +32,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
         'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
       );
     L.mapboxGL({
-      style: '${mapStyle}?apiKey=${myAPIKey}',
+      style: `${mapStyle}?apiKey=${myAPIKey}`,
       accessToken: "no-token"
     }).addTo(map);
   }
