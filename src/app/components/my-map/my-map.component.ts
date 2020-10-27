@@ -65,7 +65,8 @@ export class MyMapComponent implements OnInit, AfterViewInit {
 
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
 
-    private readonly URL = 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&outFields=PERSON_TYPE,OFFENSE_REPORT_DATE,OFFENSE_CATEGORY,OFFENSE_DESCRIPTION,AGE,RACE,ETHNICITY,SEX,LATITUDE,LONGITUDE,YEAR,OBJECTID&outSR=4326&f=json';
+
+    private URL = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&f=json"
 
     resolveItems(): Observable<any> {
       console.log("Request is sent!");
