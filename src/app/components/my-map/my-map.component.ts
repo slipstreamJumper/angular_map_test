@@ -1,6 +1,18 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 import 'mapbox-gl-leaflet';
+
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+
+
+
 @Component({
   selector: 'app-my-map',
   templateUrl: './my-map.component.html',
@@ -9,12 +21,14 @@ import 'mapbox-gl-leaflet';
 export class MyMapComponent implements OnInit, AfterViewInit {
   private map: L.Map;
   @ViewChild('map')
+
   private mapContainer: ElementRef<HTMLElement>;
 
-  constructor() { }
-  ngOnInit() {
-  }
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService) { }
 
+  ngOnInit() { }
 
   ngAfterViewInit() {
     const myAPIKey = "449cbe9951e44776b4d615a923149aca";
