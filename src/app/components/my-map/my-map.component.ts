@@ -34,8 +34,6 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
     const URL = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&f=json";
 
-
-
     const initialState = {
       lng: -77,
       lat: 38,
@@ -68,9 +66,10 @@ export class MyMapComponent implements OnInit, AfterViewInit {
 
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
 
-    resolveItems(): Observable<any> {
-      console.log("Request is sent!");
+    function resolveItems() {
       return this.http.get(this.URL);
     }
+
+    resolveItems();
   }
 }
