@@ -67,7 +67,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
 
     function resolveItems() {
-      return this.http.get(this.URL);
+      console.log(this.http.get(this.URL));
     }
 
     resolveItems();
