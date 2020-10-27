@@ -18,15 +18,14 @@ import { Observable } from 'rxjs';
   templateUrl: './my-map.component.html',
   styleUrls: ['./my-map.component.scss']
 })
+
 export class MyMapComponent implements OnInit, AfterViewInit {
   private map: L.Map;
   @ViewChild('map')
 
   private mapContainer: ElementRef<HTMLElement>;
 
-  constructor(
-    private http: HttpClient,
-    private messageService: MessageService) { }
+  constructor ( private http: HttpClient ) { }
 
   ngOnInit() { }
 
@@ -65,5 +64,12 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     }).addTo(map);
 
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
+
+    private readonly URL = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&outFields=PERSON_TYPE,OFFENSE_REPORT_DATE,OFFENSE_CATEGORY,OFFENSE_DESCRIPTION,AGE,RACE,ETHNICITY,SEX,LATITUDE,LONGITUDE,YEAR,OBJECTID&outSR=4326&f=json"
+
+    resolveItems(): Observable<any> {
+      console.log("Request is sent!");
+      return this.http.get(this.URL);
+    }
   }
 }
