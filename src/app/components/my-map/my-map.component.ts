@@ -70,6 +70,6 @@ export class MyMapComponent implements OnInit, AfterViewInit {
       console.log(this.http.get(this.URL));
     }
 
-    resolveItems();
+    //resolveItems();
   }
 }
