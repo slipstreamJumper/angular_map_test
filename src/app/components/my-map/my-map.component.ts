@@ -69,7 +69,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
 
     const resolveItems = function (){
       console.log(this.http.get(this.URL));
-      return http.get(this.URL);
+      return this.http.get(this.URL);
     };
 
     resolveItems();
