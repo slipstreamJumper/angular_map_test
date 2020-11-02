@@ -32,7 +32,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     // tslint:disable-next-line:prefer-const
     let crimeData = new CrimeApiComponent();
     console.log(crimeData.URL);
-    crimeData?.getCrimeData(crimeData.URL);
+    this.crimeData?.getCrimeData(crimeData.URL);
 
 
     const myAPIKey = '449cbe9951e44776b4d615a923149aca';
