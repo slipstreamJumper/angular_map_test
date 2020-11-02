@@ -32,7 +32,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     // tslint:disable-next-line:prefer-const
     let crimeData: CrimeApiComponent;
     crimeData?.getCrimeData();
-    crimeData.getCrimeDataAsync();
+    crimeData?.getCrimeDataAsync();
 
     const myAPIKey = "449cbe9951e44776b4d615a923149aca";
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
@@ -71,6 +71,6 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     L.marker([38.889484, -77.035278], {icon: greenIcon}).addTo(map);
 
     crimeData?.getCrimeData();
-    crimeData.getCrimeDataAsync();
+    crimeData?.getCrimeDataAsync();
   }
 }
