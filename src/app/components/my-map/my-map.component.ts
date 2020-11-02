@@ -70,7 +70,11 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
     L.marker([38.889484, -77.035278], {icon: greenIcon}).addTo(map);
 
+    console.log("Trying to get crime data....")
+    console.log("checking synchronous crime data........")
     crimeData?.getCrimeData();
+    console.log("checking asynchronous crime data........")
     crimeData?.getCrimeDataAsync();
+    console.log("...finished...")
   }
 }
