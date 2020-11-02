@@ -21,14 +21,18 @@ import { CrimeApiComponent } from '../crime-api/crime-api.component';
 export class MyMapComponent implements OnInit, AfterViewInit {
   private map: L.Map;
   @ViewChild('map')
-
+  public a;
   private mapContainer: ElementRef<HTMLElement>;
-
   private http: HttpClient;
   constructor ( ) { }
   ngOnInit() { }
 
   ngAfterViewInit() {
+
+    // tslint:disable-next-line:prefer-const
+    var crimeapp: CrimeApiComponent;
+    crimeapp?.getCrimeData();
+
     const myAPIKey = "449cbe9951e44776b4d615a923149aca";
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
 
@@ -65,9 +69,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
     L.marker([38.889484, -77.035278], {icon: greenIcon}).addTo(map);
 
-    // tslint:disable-next-line:prefer-const
-    var crimeapp: CrimeApiComponent;
     crimeapp?.getCrimeData();
-
+    this.a = crimeapp?.getCrimeData();
   }
 }
