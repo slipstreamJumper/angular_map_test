@@ -3,7 +3,10 @@ import * as L from 'leaflet';
 import 'mapbox-gl-leaflet';
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
+
 import { Observable } from 'rxjs';
 import { CrimeApiComponent } from '../crime-api/crime-api.component';
 
