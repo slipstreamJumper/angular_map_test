@@ -17,6 +17,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./my-map.component.scss']
 })
 
+
+
 export class MyMapComponent implements OnInit, AfterViewInit {
   private map: L.Map;
   @ViewChild('map')
@@ -31,9 +33,6 @@ export class MyMapComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     const myAPIKey = "449cbe9951e44776b4d615a923149aca";
     const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
-    const URL = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&f=json";
-
-
 
     const initialState = {
       lng: -77,
