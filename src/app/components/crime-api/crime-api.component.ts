@@ -14,11 +14,11 @@ export class CrimeApiComponent {
   private httpclient: HttpClient;
   constructor() {  }
 
-  URL: string = 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&f=json';
+  URL = 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&f=json';
 
-  getCrimeData(URL){
-    console.log(this.httpclient.get(URL));
-    return this.http.get(URL);
+  getCrimeData(crimeUrl) {
+    console.log(this.httpclient.get(crimeUrl));
+    return this.httpclient.get(crimeUrl);
   }
 
   resolveAfter5Seconds(x) {
@@ -36,16 +36,16 @@ export class CrimeApiComponent {
     console.log('I will not wait until the promise is resolved.');
   }
 
-  //async function tryAndGetCrimeData() {
+  // async function tryAndGetCrimeData() {
   //  // wait 5 seconds
   //  await new Promise(getCrimeData => setTimeout(getCrimeData, 5000));
 
-  //}
+  // }
 
-  //this.doAsyncObservableCrimeData = new Observable(observer => {
+  // this.doAsyncObservableCrimeData = new Observable(observer => {
   //  observer.next('Started');
   //  setTimeout (() => {observer.next('Hello, observable world!');},1000);
   //  setTimeout (() => { observer.next('Done'); observer.complete();}, 2000);
-  //});
+  // });
 
 }
