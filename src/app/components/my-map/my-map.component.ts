@@ -31,7 +31,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
 
     // tslint:disable-next-line:prefer-const
     let crimeData = new CrimeApiComponent();
-    console.log(typeof crimeData);
+    console.log(crimeData.URL);
     crimeData?.getCrimeData();
     crimeData?.getCrimeDataAsync();
 
