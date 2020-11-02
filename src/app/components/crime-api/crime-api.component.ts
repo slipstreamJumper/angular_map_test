@@ -11,7 +11,8 @@ import {Observable} from 'rxjs';
 
 export class CrimeApiComponent {
 
-  constructor(private httpclient: HttpClient) {  }
+  private httpclient: HttpClient;
+  constructor() {  }
 
   URL: string = 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&f=json';
 

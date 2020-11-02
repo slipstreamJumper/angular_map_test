@@ -30,12 +30,12 @@ export class MyMapComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
 
     // tslint:disable-next-line:prefer-const
-    let crimeData: CrimeApiComponent;
+    let crimeData = new CrimeApiComponent();
     crimeData?.getCrimeData();
     crimeData?.getCrimeDataAsync();
 
-    const myAPIKey = "449cbe9951e44776b4d615a923149aca";
-    const mapStyle = "https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json";
+    const myAPIKey = '449cbe9951e44776b4d615a923149aca';
+    const mapStyle = 'https://maps.geoapify.com/v1/styles/dark-matter-dark-purple/style.json';
 
     const initialState = {
       lng: -77,
@@ -70,8 +70,8 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
     L.marker([38.889484, -77.035278], {icon: greenIcon}).addTo(map);
 
-    console.log("Trying to get crime data....")
-    console.log("checking synchronous crime data........")
+    console.log('Trying to get crime data....')
+    console.log('checking synchronous crime data........')
     crimeData?.getCrimeData();
     console.log("checking asynchronous crime data........")
     crimeData?.getCrimeDataAsync();
