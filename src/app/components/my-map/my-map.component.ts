@@ -76,5 +76,6 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     console.log("checking asynchronous crime data........")
     crimeData?.getCrimeDataAsync();
     console.log("...finished...")
+    crimeData.getValueWithPromise();
   }
 }

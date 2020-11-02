@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-crime-api',
@@ -22,6 +23,34 @@ export class CrimeApiComponent {
   getCrimeDataAsync = async function(){
     let a = await this.httpclient.get(URL);
     console.log(a);
+    return a;
   };
+
+  resolveAfter5Seconds(x) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(x);
+      }, 2000);
+    });
+  }
+
+  getValueWithPromise() {
+    this.resolveAfter5Seconds(20).then(value => {
+      console.log('promise result: ${value}');
+    });
+    console.log('I will not wait until the promise is resolved.');
+  }
+
+  //async function tryAndGetCrimeData() {
+  //  // wait 5 seconds
+  //  await new Promise(getCrimeData => setTimeout(getCrimeData, 5000));
+
+  //}
+
+  //this.doAsyncObservableCrimeData = new Observable(observer => {
+  //  observer.next('Started');
+  //  setTimeout (() => {observer.next('Hello, observable world!');},1000);
+  //  setTimeout (() => { observer.next('Done'); observer.complete();}, 2000);
+  //});
 
 }
