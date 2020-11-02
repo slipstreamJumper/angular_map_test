@@ -16,16 +16,10 @@ export class CrimeApiComponent {
 
   URL: string = 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&f=json';
 
-  getCrimeData = function (){
+  getCrimeData(URL){
     console.log(this.httpclient.get(URL));
     return this.http.get(URL);
-  };
-
-  getCrimeDataAsync = async function(){
-    let a = await this.httpclient.get(URL);
-    console.log(a);
-    return a;
-  };
+  }
 
   resolveAfter5Seconds(x) {
     return new Promise(resolve => {
