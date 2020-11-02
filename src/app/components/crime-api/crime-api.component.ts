@@ -20,7 +20,7 @@ export class CrimeApiComponent {
   };
 
   getCrimeDataAsync = async function(){
-    a = await this.httpclient.get(URL);
+    let a = await this.httpclient.get(URL);
     console.log(a);
   };
 
