@@ -17,8 +17,9 @@ export class CrimeApiComponent {
   public URL = 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/32/query?where=1%3D1&f=json';
 
   public getCrimeData(crimeUrl) {
+    console.log('...getting crime data from direct method...');
     let a = this.httpclient.get(crimeUrl);
-    console.log('...getting crime data from direct method...')
+    console.log('...after getting crime data from direct method...');
     console.log(a);
     return a;
   }
