@@ -66,7 +66,7 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     L.marker([38.889484, -77.035278], {icon: greenIcon}).addTo(map);
 
     var crimeapp: CrimeApiComponent;
-    crimeapp.resolveItems();
+    crimeapp.getCrimeData();
 
   }
 }
