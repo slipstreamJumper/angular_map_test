@@ -65,8 +65,9 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
     L.marker([38.889484, -77.035278], {icon: greenIcon}).addTo(map);
 
+    // tslint:disable-next-line:prefer-const
     var crimeapp: CrimeApiComponent;
-    crimeapp.getCrimeData();
+    crimeapp?.getCrimeData();
 
   }
 }
