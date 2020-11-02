@@ -5,7 +5,7 @@ import 'mapbox-gl-leaflet';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { CrimeApiComponent } from '../crime-api/crime-api.component';
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +18,12 @@ import { Observable } from 'rxjs';
 })
 
 
-
 export class MyMapComponent implements OnInit, AfterViewInit {
   private map: L.Map;
   @ViewChild('map')
 
   private mapContainer: ElementRef<HTMLElement>;
 
-  //constructor ( private http: HttpClient ) { }
   private http: HttpClient;
   constructor ( ) { }
   ngOnInit() { }
@@ -67,11 +65,8 @@ export class MyMapComponent implements OnInit, AfterViewInit {
     L.marker([38.889248, -77.050636], {icon: greenIcon}).addTo(map);
     L.marker([38.889484, -77.035278], {icon: greenIcon}).addTo(map);
 
-    const resolveItems = function (){
-      console.log(this.http.get(this.URL));
-      return this.http.get(this.URL);
-    };
+    var crimeapp: CrimeApiComponent;
+    crimeapp.resolveItems();
 
-    resolveItems();
   }
 }

@@ -14,7 +14,6 @@ export class CrimeApiComponent {
     return this.http.get(this.URL);
   };
 
-
   constructor() {
   }
 }
